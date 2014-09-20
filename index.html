@@ -10,10 +10,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
 </head>
-<body>
+<body ng-controller="ParkingController as parking">
 	<div class="container">
 		<div class="row">
-			{{"Hello " + "world!"}}	
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="space in parking.spaces">
+					<parking-space></parking-space>
+				</li>
+				<li class="list-group-item">
+					<button ng-click="parking.addSpace()">Add Space</button>
+				</li>
+			</ul>	
 		</div>
 	</div>
 
